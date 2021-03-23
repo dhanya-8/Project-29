@@ -7,9 +7,10 @@ var engine, world;
 var ground;
 var polygon, hit;
 
-function setup(){
-    hit = loadImage("polygon.png")
+function preload(){
+    hit = loadImage("polygon.png");
 }
+
 
 function setup(){
     canvas = createCanvas(1200,400);
@@ -62,6 +63,9 @@ function draw(){
     background("black")
     Engine.update(engine);
 
+    imageMode(CENTER);
+    image(hit, polygon.position.x, polygon.position.y, 40, 40);
+
     ground.display();
     ground2.display();
     ground3.display();
@@ -97,9 +101,6 @@ function draw(){
     block24.display();
 
     block25.display();
-
-    imageMode(CENTER)
-    image(hit, polygon.position.x, polygon.position.y, 40, 40);
 
     slingShot.display();
     
